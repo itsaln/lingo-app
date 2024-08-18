@@ -1,15 +1,11 @@
-import { auth } from "@clerk/nextjs"
+import { auth } from '@clerk/nextjs'
 
-const adminIds = [
-  "user_2kjUpdfk9e1aytWmFf2n4ozKXGf",
-];
+const adminIds = ['user_2kjUpdfk9e1aytWmFf2n4ozKXGf']
 
 export const isAdmin = () => {
-  const { userId } = auth();
+	const { userId } = auth()
 
-  if (!userId) {
-    return false;
-  }
+	if (!userId) return false
 
-  return adminIds.indexOf(userId) !== -1;
-};
+	return adminIds.indexOf(userId) !== -1
+}
